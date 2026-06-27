@@ -4,6 +4,19 @@ A Claude Code **skill** that applies a consistent Acadia University–based visu
 work deliverable — Word/`.docx`, PDF, HTML pages and dashboards, Power BI reports, slides, and charts.
 Install it once and Claude automatically styles anything it produces to match the brand.
 
+## Quickstart
+
+```bash
+git clone https://github.com/krisstrong/acadia-theme-skill.git
+cp -r acadia-theme-skill/skill ~/.claude/skills/theme      # Windows: see note below
+```
+
+Restart Claude Code, then ask for anything — *"make a one-page HTML status report"* — and the theme
+applies automatically. Works in the terminal CLI, desktop app, and VS Code (they share `~/.claude`).
+
+> **Windows (PowerShell):** `Copy-Item -Recurse -Force "acadia-theme-skill\skill" "$env:USERPROFILE\.claude\skills\theme"`
+> Full options (per-project install, IDEs, updating) are in [Install the skill into Claude Code](#install-the-skill-into-claude-code).
+
 ## Brand at a glance
 
 - **Acadia Blue** `#004077` (primary) · **Acadia Red** `#C41424` (accent, used sparingly) · White
