@@ -86,6 +86,34 @@ Commit `.claude/skills/theme/` with the project and everyone on the team gets th
    as a Word doc", "build a Power BI theme") and the Acadia theme applies automatically. You can also
    nudge it explicitly: *"apply our theme / use our brand colors."*
 
+### Using it across Claude Code surfaces (terminal, desktop app, VS Code)
+
+Claude Code comes in several forms — the **terminal CLI**, the **desktop app** (macOS/Windows), the
+**web app** (claude.ai/code), and **IDE extensions** (VS Code, JetBrains). The important thing:
+
+> **They all read the same personal skills folder (`~/.claude/skills/`).** Install once with
+> **Section A** and the theme is available in *every* surface — no per-app setup.
+
+**Desktop app (macOS / Windows)**
+1. Do the personal install in **Section A** above.
+2. Open the desktop app and open/select your project folder (**Open Project** / recent projects).
+3. **Quit and reopen the app** once after installing so it rescans skills.
+4. Ask for any deliverable, or *"use the theme skill"* — verify with *"What skills are available?"*
+
+**VS Code (and JetBrains)**
+1. Install the **Claude Code** extension from the VS Code Marketplace (search "Claude Code"), or run
+   `claude` once in the integrated terminal and accept its offer to install the extension. Sign in.
+2. Personal skills from `~/.claude/skills/` load automatically — **Section A** is all you need for it
+   to be available in every workspace.
+3. To bundle the theme *with a specific project* instead, use **Section B** (`<project>/.claude/skills/theme/`);
+   it loads whenever that folder is open in the editor, and travels with the repo for teammates.
+4. After adding or changing a skill, **reload the window** (`Ctrl/Cmd+Shift+P` → *Developer: Reload Window*)
+   or restart the Claude Code panel so it picks up the change.
+5. Open the Claude Code panel and ask for a deliverable; confirm with *"What skills are available?"*
+
+> One install, everywhere: because the CLI, desktop app, and IDE extensions share `~/.claude`,
+> updating the skill once (next section) updates it for all of them.
+
 ### Updating the skill later
 
 When this repo changes, refresh your installed copy:
