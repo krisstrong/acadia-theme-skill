@@ -29,22 +29,79 @@ Install it once and Claude automatically styles anything it produces to match th
    └─ assets/                   chart PNGs + logo
 ```
 
-## Install the skill
+## Install the skill into Claude Code
 
-Copy the `skill/` folder into your Claude Code skills directory as `theme` (or any name you like):
+A Claude Code "skill" is just a folder containing a `SKILL.md` placed in a `skills/` directory.
+Claude discovers it automatically and applies it whenever a request matches its description — you
+don't run a command to "load" it, you just put the folder in the right place.
 
-**Windows**
+### Where to put it
+
+| Location | Path | Available in |
+|----------|------|--------------|
+| **Personal** (recommended) | `~/.claude/skills/theme/` | **Every** project on your machine |
+| **Project** | `<your-project>/.claude/skills/theme/` | Only that one project (good for sharing via the project's repo) |
+
+For an always-on house theme, use **Personal**.
+
+### A. Install for all future projects (personal)
+
+First get the files — either clone this repo or download it:
+
+```bash
+git clone https://github.com/krisstrong/acadia-theme-skill.git
+cd acadia-theme-skill
+```
+
+Then copy the `skill/` folder into your personal skills directory, named `theme`:
+
+**Windows (PowerShell)**
 ```powershell
-Copy-Item -Recurse "skill" "$env:USERPROFILE\.claude\skills\theme"
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.claude\skills" | Out-Null
+Copy-Item -Recurse -Force "skill" "$env:USERPROFILE\.claude\skills\theme"
 ```
 
 **macOS / Linux**
 ```bash
+mkdir -p ~/.claude/skills
 cp -r skill ~/.claude/skills/theme
 ```
 
-Then in Claude Code, ask for any deliverable ("make a one-page HTML status report", "draft this memo
-as a Word doc") and the theme applies automatically. See [`skill/SKILL.md`](skill/SKILL.md) for details.
+### B. Install for a single project
+
+From inside that project's root:
+
+```bash
+mkdir -p .claude/skills
+cp -r /path/to/acadia-theme-skill/skill .claude/skills/theme
+```
+
+Commit `.claude/skills/theme/` with the project and everyone on the team gets the theme.
+
+### C. Activate and verify
+
+1. **Start (or restart) Claude Code** in your project so it picks up the new skill folder.
+2. Confirm it loaded — ask: **"What skills are available?"** or **"Use the theme skill to make a sample HTML page."**
+3. From then on, just ask for any deliverable ("make a one-page HTML status report", "draft this memo
+   as a Word doc", "build a Power BI theme") and the Acadia theme applies automatically. You can also
+   nudge it explicitly: *"apply our theme / use our brand colors."*
+
+### Updating the skill later
+
+When this repo changes, refresh your installed copy:
+
+```bash
+cd acadia-theme-skill && git pull
+# then re-run the copy command from section A (or B)
+```
+
+> **Tip (stay in sync automatically):** instead of copying, link the folder so edits in the repo apply everywhere.
+> - macOS/Linux: `ln -s "$(pwd)/skill" ~/.claude/skills/theme`
+> - Windows (admin PowerShell): `New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.claude\skills\theme" -Target "$PWD\skill"`
+>
+> Symlinks can be finicky on OneDrive-synced folders — if it misbehaves, just use the plain copy method.
+
+See [`skill/SKILL.md`](skill/SKILL.md) for the full set of rules Claude follows.
 
 ## Using the pieces directly (without the skill)
 
