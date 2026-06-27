@@ -1,0 +1,20 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+
+# Python (used to generate samples)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Office temp lock files
+~$*.docx
+~$*.pptx
+~$*.xlsx
+
+# Scratch
+/scratch/
+*.tmp

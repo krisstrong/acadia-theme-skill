@@ -1,0 +1,121 @@
+/* ============================================================
+   House Theme (Acadia-based) — drop-in stylesheet
+   Link in <head>:
+     <link rel="stylesheet" href="theme.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+   ============================================================ */
+
+:root {
+  /* Brand */
+  --color-primary:        #004077;  /* Acadia Blue */
+  --color-primary-dark:   #002F58;
+  --color-primary-200:    #B3C6D6;
+  --color-primary-50:     #E6EDF3;
+  --color-accent:         #C41424;  /* Acadia Red */
+  --color-accent-dark:    #9E1019;
+  --color-accent-50:      #FBE7E9;
+
+  /* Neutrals */
+  --color-ink:            #1A1A1A;
+  --color-gray-700:       #3D3D3D;
+  --color-muted:          #6B6B6B;
+  --color-border:         #D7DAE0;
+  --color-surface-alt:    #F5F6F8;
+  --color-surface:        #FFFFFF;
+
+  /* Semantic */
+  --color-success:        #59A14F;
+  --color-warning:        #EDC949;
+  --color-error:          #E15759;
+  --color-info:           #4E79A7;
+
+  /* Chart — Tableau Classic 10 */
+  --chart-1:  #4E79A7;  --chart-2:  #F28E2B;  --chart-3:  #E15759;
+  --chart-4:  #76B7B2;  --chart-5:  #59A14F;  --chart-6:  #EDC949;
+  --chart-7:  #AF7AA1;  --chart-8:  #FF9DA7;  --chart-9:  #9C755F;
+  --chart-10: #BAB0AC;
+
+  /* Type */
+  --font-heading: "Avenir Next", "Montserrat", "Lato", Arial, sans-serif;
+  --font-body:    Arial, "Helvetica Neue", Helvetica, "Lato", sans-serif;
+  --font-mono:    "Cascadia Code", "Consolas", monospace;
+
+  /* Spacing (8px base) */
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-6: 24px; --space-8: 32px; --space-12: 48px; --space-16: 64px;
+
+  /* Radius & elevation */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --shadow-card: 0 1px 3px rgba(0,0,0,.12);
+}
+
+/* ---- Base ---- */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-ink);
+  background: var(--color-surface);
+}
+
+h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--color-primary); margin: 0 0 var(--space-4); line-height: 1.2; }
+h1 { font-size: 2rem;    font-weight: 700; }
+h2 { font-size: 1.5rem;  font-weight: 600; margin-top: var(--space-8); }
+h3 { font-size: 1.25rem; font-weight: 600; margin-top: var(--space-6); }
+p  { margin: 0 0 var(--space-4); }
+small, .caption { font-size: 0.85rem; color: var(--color-muted); }
+
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { text-decoration: underline; color: var(--color-primary-dark); }
+
+/* ---- Layout helpers ---- */
+.container { max-width: 1100px; margin: 0 auto; padding: var(--space-8); }
+
+.site-header {
+  background: var(--color-primary);
+  color: #fff;
+  padding: var(--space-4) var(--space-8);
+}
+.site-header h1, .site-header h2 { color: #fff; margin: 0; }
+
+/* ---- Cards / KPI ---- */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-6);
+}
+.kpi { border-top: 4px solid var(--color-primary); }
+.kpi .value { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--color-primary); }
+.kpi .label { color: var(--color-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: .04em; }
+
+/* ---- Callouts ---- */
+.callout { border-left: 4px solid var(--color-accent); background: var(--color-accent-50); padding: var(--space-4); border-radius: var(--radius-sm); }
+.callout--info { border-left-color: var(--color-primary); background: var(--color-primary-50); }
+
+/* ---- Tables ---- */
+table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+thead th { background: var(--color-primary); color: #fff; text-align: left; padding: var(--space-3); font-family: var(--font-heading); font-weight: 600; }
+tbody td { padding: var(--space-3); border-bottom: 1px solid var(--color-border); }
+tbody tr:nth-child(even) { background: var(--color-surface-alt); }
+
+/* ---- Buttons ---- */
+.btn { display: inline-block; font-family: var(--font-heading); font-weight: 600; padding: var(--space-2) var(--space-4); border-radius: var(--radius-sm); border: 1px solid transparent; cursor: pointer; }
+.btn--primary { background: var(--color-primary); color: #fff; }
+.btn--primary:hover { background: var(--color-primary-dark); text-decoration: none; }
+.btn--accent  { background: var(--color-accent); color: #fff; }
+.btn--accent:hover  { background: var(--color-accent-dark); }
+.btn--ghost   { background: transparent; color: var(--color-primary); border-color: var(--color-primary); }
+
+/* ---- Status text ---- */
+.is-success { color: var(--color-success); }
+.is-warning { color: var(--color-warning); }
+.is-error   { color: var(--color-error); }
+
+/* ---- Footer ---- */
+.site-footer { border-top: 3px solid var(--color-accent); margin-top: var(--space-12); padding: var(--space-6) var(--space-8); color: var(--color-muted); font-size: 0.85rem; }

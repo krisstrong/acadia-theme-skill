@@ -1,0 +1,101 @@
+{
+  "name": "House Theme (Acadia)",
+  "dataColors": [
+    "#4E79A7",
+    "#F28E2B",
+    "#E15759",
+    "#76B7B2",
+    "#59A14F",
+    "#EDC949",
+    "#AF7AA1",
+    "#FF9DA7",
+    "#9C755F",
+    "#BAB0AC"
+  ],
+  "foreground": "#1A1A1A",
+  "foregroundNeutralSecondary": "#6B6B6B",
+  "background": "#FFFFFF",
+  "backgroundLight": "#F5F6F8",
+  "backgroundNeutral": "#E6EDF3",
+  "tableAccent": "#004077",
+  "good": "#59A14F",
+  "neutral": "#EDC949",
+  "bad": "#E15759",
+  "maximum": "#004077",
+  "center": "#B3C6D6",
+  "minimum": "#E6EDF3",
+  "null": "#BAB0AC",
+  "hyperlink": "#004077",
+  "visitedHyperlink": "#9E1019",
+  "textClasses": {
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 14,
+      "color": "#004077"
+    },
+    "header": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 12,
+      "color": "#004077"
+    },
+    "label": {
+      "fontFace": "Arial",
+      "fontSize": 10,
+      "color": "#1A1A1A"
+    },
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 36,
+      "color": "#004077"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [{ "show": true, "color": { "solid": { "color": "#FFFFFF" } } }],
+        "border": [{ "show": true, "color": { "solid": { "color": "#D7DAE0" } }, "radius": 4 }],
+        "title": [
+          {
+            "show": true,
+            "fontColor": { "solid": { "color": "#004077" } },
+            "fontFamily": "Segoe UI Semibold",
+            "fontSize": 12,
+            "alignment": "left"
+          }
+        ],
+        "visualHeader": [
+          { "show": true, "background": { "solid": { "color": "#FFFFFF" } } }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [{ "color": { "solid": { "color": "#FFFFFF" } }, "transparency": 0 }],
+        "outspace": [{ "color": { "solid": { "color": "#F5F6F8" } } }]
+      }
+    },
+    "card": {
+      "*": {
+        "labels": [{ "color": { "solid": { "color": "#004077" } }, "fontFamily": "Segoe UI Semibold", "fontSize": 32 }],
+        "categoryLabels": [{ "color": { "solid": { "color": "#6B6B6B" } }, "fontSize": 10 }]
+      }
+    },
+    "slicer": {
+      "*": {
+        "header": [{ "fontColor": { "solid": { "color": "#004077" } }, "fontFamily": "Segoe UI Semibold" }]
+      }
+    },
+    "tableEx": {
+      "*": {
+        "columnHeaders": [{ "fontColor": { "solid": { "color": "#FFFFFF" } }, "backColor": { "solid": { "color": "#004077" } }, "fontFamily": "Segoe UI Semibold" }],
+        "values": [{ "fontColorPrimary": { "solid": { "color": "#1A1A1A" } }, "backColorPrimary": { "solid": { "color": "#FFFFFF" } }, "backColorSecondary": { "solid": { "color": "#F5F6F8" } } }]
+      }
+    },
+    "pivotTable": {
+      "*": {
+        "columnHeaders": [{ "fontColor": { "solid": { "color": "#FFFFFF" } }, "backColor": { "solid": { "color": "#004077" } }, "fontFamily": "Segoe UI Semibold" }],
+        "values": [{ "fontColorPrimary": { "solid": { "color": "#1A1A1A" } }, "backColorPrimary": { "solid": { "color": "#FFFFFF" } }, "backColorSecondary": { "solid": { "color": "#F5F6F8" } } }]
+      }
+    }
+  }
+}

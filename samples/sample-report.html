@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theme Sample — Quarterly Enrolment Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --color-primary:#004077;--color-primary-dark:#002F58;--color-primary-50:#E6EDF3;
+      --color-accent:#C41424;--color-accent-dark:#9E1019;--color-accent-50:#FBE7E9;
+      --color-ink:#1A1A1A;--color-muted:#6B6B6B;--color-border:#D7DAE0;
+      --color-surface-alt:#F5F6F8;--color-success:#59A14F;--color-error:#E15759;
+      --c1:#4E79A7;--c2:#F28E2B;--c3:#E15759;--c4:#76B7B2;--c5:#59A14F;
+      --font-heading:"Avenir Next","Montserrat","Lato",Arial,sans-serif;
+      --font-body:Arial,"Helvetica Neue",Helvetica,"Lato",sans-serif;
+      --s4:16px;--s6:24px;--s8:32px;--s12:48px;--radius:8px;--radius-sm:4px;
+      --shadow:0 1px 3px rgba(0,0,0,.12);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:var(--font-body);color:var(--color-ink);background:#fff;line-height:1.5}
+    .container{max-width:1080px;margin:0 auto;padding:var(--s8)}
+    h1,h2,h3{font-family:var(--font-heading);color:var(--color-primary);margin:0 0 var(--s4);line-height:1.2}
+    h2{font-size:1.5rem;margin-top:var(--s8)}
+    h3{font-size:1.2rem;margin-top:var(--s6)}
+    .caption{color:var(--color-muted);font-size:.85rem}
+    /* header band */
+    .site-header{background:var(--color-primary);padding:var(--s4) 0}
+    .site-header .container{padding-top:0;padding-bottom:0;display:flex;align-items:center;gap:var(--s4)}
+    .logo-chip{background:#fff;border-radius:var(--radius-sm);padding:6px 12px;display:inline-flex}
+    .logo-chip img{height:40px;display:block}
+    .site-header h1{color:#fff;margin:0;font-size:1.6rem}
+    /* kpi */
+    .kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:var(--s4);margin:var(--s6) 0}
+    .card{background:#fff;border:1px solid var(--color-border);border-radius:var(--radius);box-shadow:var(--shadow);padding:var(--s6)}
+    .kpi{border-top:4px solid var(--color-primary)}
+    .kpi .value{font-family:var(--font-heading);font-size:2rem;font-weight:700;color:var(--color-primary)}
+    .kpi .label{color:var(--color-muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
+    /* callout */
+    .callout{border-left:4px solid var(--color-accent);background:var(--color-accent-50);padding:var(--s4);border-radius:var(--radius-sm);margin:var(--s6) 0}
+    /* table */
+    table{width:100%;border-collapse:collapse;font-size:.95rem;margin-top:var(--s4)}
+    thead th{background:var(--color-primary);color:#fff;text-align:left;padding:12px;font-family:var(--font-heading);font-weight:600}
+    tbody td{padding:12px;border-bottom:1px solid var(--color-border)}
+    tbody tr:nth-child(even){background:var(--color-surface-alt)}
+    .is-success{color:var(--color-success);font-weight:700}
+    .is-error{color:var(--color-error);font-weight:700}
+    /* buttons */
+    .btn{display:inline-block;font-family:var(--font-heading);font-weight:600;padding:10px 18px;border-radius:var(--radius-sm);border:1px solid transparent;text-decoration:none;cursor:pointer}
+    .btn--primary{background:var(--color-primary);color:#fff}
+    .btn--ghost{background:transparent;color:var(--color-primary);border-color:var(--color-primary)}
+    /* footer */
+    .site-footer{border-top:3px solid var(--color-accent);margin-top:var(--s12);padding:var(--s6) 0;color:var(--color-muted);font-size:.85rem}
+    .site-footer .container{padding-top:0;padding-bottom:0;display:flex;align-items:center;gap:var(--s4)}
+    .site-footer img{height:24px}
+    /* chart */
+    .chart{margin-top:var(--s4)}
+    .legend{display:flex;flex-wrap:wrap;gap:var(--s4);margin-top:var(--s4);font-size:.85rem;color:var(--color-muted)}
+    .legend span{display:inline-flex;align-items:center;gap:6px}
+    .swatch{width:12px;height:12px;border-radius:2px;display:inline-block}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <span class="logo-chip">
+        <img src="assets/acadia-horizontal.png" alt="Acadia University">
+      </span>
+      <h1>Quarterly Enrolment Report</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <p class="caption">Sample deliverable · Prepared 27 June 2026 · Office of Institutional Analysis</p>
+    <p>This is a sample report demonstrating the house theme: Acadia Blue headings in the marketing font, Arial body text, the brand logo, KPI cards, a Tableau Classic 10 chart, and on-brand tables. Everything below is driven by the theme tokens.</p>
+
+    <div class="kpi-row">
+      <div class="card kpi"><div class="value">4,182</div><div class="label">Total enrolment</div></div>
+      <div class="card kpi"><div class="value">+6.4%</div><div class="label">YoY growth</div></div>
+      <div class="card kpi"><div class="value">1,047</div><div class="label">New students</div></div>
+      <div class="card kpi"><div class="value">91%</div><div class="label">Retention</div></div>
+    </div>
+
+    <div class="callout"><strong>Key takeaway:</strong> Growth was led by the Faculty of Pure &amp; Applied Science, up 14% year over year. The red accent rule spotlights the single most important point on the page.</div>
+
+    <h2>Enrolment by faculty</h2>
+    <div class="chart">
+      <svg viewBox="0 0 720 300" width="100%" role="img" aria-label="Bar chart of enrolment by faculty">
+        <!-- gridlines -->
+        <g stroke="#D7DAE0" stroke-width="1">
+          <line x1="60" y1="250" x2="700" y2="250"/>
+          <line x1="60" y1="190" x2="700" y2="190"/>
+          <line x1="60" y1="130" x2="700" y2="130"/>
+          <line x1="60" y1="70"  x2="700" y2="70"/>
+        </g>
+        <g font-family="Arial" font-size="11" fill="#6B6B6B" text-anchor="end">
+          <text x="52" y="254">0</text><text x="52" y="194">400</text>
+          <text x="52" y="134">800</text><text x="52" y="74">1200</text>
+        </g>
+        <!-- bars (Classic 10 in order) -->
+        <g>
+          <rect x="90"  y="100" width="80" height="150" fill="#4E79A7"/>
+          <rect x="210" y="70"  width="80" height="180" fill="#F28E2B"/>
+          <rect x="330" y="140" width="80" height="110" fill="#E15759"/>
+          <rect x="450" y="120" width="80" height="130" fill="#76B7B2"/>
+          <rect x="570" y="165" width="80" height="85"  fill="#59A14F"/>
+        </g>
+        <g font-family="Arial" font-size="11" fill="#1A1A1A" text-anchor="middle">
+          <text x="130" y="270">Arts</text>
+          <text x="250" y="270">Science</text>
+          <text x="370" y="270">Prof. Studies</text>
+          <text x="490" y="270">Theology</text>
+          <text x="610" y="270">Grad Studies</text>
+        </g>
+      </svg>
+      <div class="legend">
+        <span><i class="swatch" style="background:#4E79A7"></i>Arts</span>
+        <span><i class="swatch" style="background:#F28E2B"></i>Science</span>
+        <span><i class="swatch" style="background:#E15759"></i>Prof. Studies</span>
+        <span><i class="swatch" style="background:#76B7B2"></i>Theology</span>
+        <span><i class="swatch" style="background:#59A14F"></i>Grad Studies</span>
+      </div>
+    </div>
+
+    <h2>Year-over-year detail</h2>
+    <table>
+      <thead><tr><th>Faculty</th><th>2025</th><th>2026</th><th>Change</th></tr></thead>
+      <tbody>
+        <tr><td>Arts</td><td>1,002</td><td>1,043</td><td class="is-success">+4.1%</td></tr>
+        <tr><td>Pure &amp; Applied Science</td><td>1,058</td><td>1,206</td><td class="is-success">+14.0%</td></tr>
+        <tr><td>Professional Studies</td><td>742</td><td>731</td><td class="is-error">-1.5%</td></tr>
+        <tr><td>Theology</td><td>168</td><td>174</td><td class="is-success">+3.6%</td></tr>
+        <tr><td>Graduate Studies</td><td>512</td><td>578</td><td class="is-success">+12.9%</td></tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:var(--s6)">
+      <a class="btn btn--primary" href="#">Download full data</a>
+      <a class="btn btn--ghost" href="#">View dashboard</a>
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <img src="assets/acadia-horizontal.png" alt="Acadia University">
+      <span>Quarterly Enrolment Report · Confidential · Page 1</span>
+    </div>
+  </footer>
+</body>
+</html>

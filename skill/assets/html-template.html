@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Title</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container" style="padding-top:0;padding-bottom:0;display:flex;align-items:center;gap:var(--space-4);">
+      <!-- Color logo sits in a white chip so it reads on the blue band.
+           Swap to logo/acadia-horizontal-white.png and remove the chip styles if a white logo is added. -->
+      <span style="background:#fff;border-radius:var(--radius-sm);padding:6px 10px;display:inline-flex;">
+        <img src="logo/acadia-horizontal.png" alt="Acadia University" style="height:36px;display:block;">
+      </span>
+      <h1>Report Title</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <p class="caption">Prepared 2026 · Author Name</p>
+
+    <h2>Section heading</h2>
+    <p>Body copy in Arial. Acadia Blue headings, generous line height, plenty of whitespace.</p>
+
+    <!-- KPI row -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:var(--space-4);margin:var(--space-6) 0;">
+      <div class="card kpi"><div class="value">1,284</div><div class="label">Total</div></div>
+      <div class="card kpi"><div class="value">+12%</div><div class="label">Growth</div></div>
+      <div class="card kpi"><div class="value">94%</div><div class="label">On target</div></div>
+    </div>
+
+    <div class="callout">Use callouts sparingly — the red rule draws the eye to one key takeaway.</div>
+
+    <h3>Table</h3>
+    <table>
+      <thead><tr><th>Category</th><th>Value</th><th>Change</th></tr></thead>
+      <tbody>
+        <tr><td>Alpha</td><td>420</td><td class="is-success">+5%</td></tr>
+        <tr><td>Beta</td><td>318</td><td class="is-error">-2%</td></tr>
+        <tr><td>Gamma</td><td>546</td><td class="is-success">+9%</td></tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:var(--space-6);">
+      <a class="btn btn--primary" href="#">Primary action</a>
+      <a class="btn btn--ghost" href="#">Secondary</a>
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" style="padding:0;display:flex;align-items:center;gap:var(--space-4);">
+      <img src="logo/acadia-horizontal.png" alt="Acadia University" style="height:24px;">
+      <span>Document name · Confidential</span>
+    </div>
+  </footer>
+</body>
+</html>
