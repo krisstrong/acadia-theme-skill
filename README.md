@@ -38,7 +38,7 @@ applies automatically. Works in the terminal CLI, desktop app, and VS Code (they
    ├─ sample-report.html        Branded web report (open in a browser)
    ├─ sample-report.docx        Branded Word document
    ├─ sample-report.pdf         The Word report exported to PDF
-   ├─ acadia-powerbi-theme.json Importable Power BI theme
+   ├─ acadia-powerbi-theme.json Importable Power BI theme ("Acadia 2026")
    └─ assets/                   chart PNGs + logo
 ```
 
@@ -147,7 +147,7 @@ See [`skill/SKILL.md`](skill/SKILL.md) for the full set of rules Claude follows.
 ## Using the pieces directly (without the skill)
 
 - **HTML:** link [`skill/assets/theme.css`](skill/assets/theme.css); start from `skill/assets/html-template.html`.
-- **Power BI:** View ▸ Themes ▸ Browse for themes ▸ select `skill/assets/acadia-powerbi-theme.json`.
+- **Power BI:** View ▸ Themes ▸ Browse for themes ▸ select `skill/assets/acadia-powerbi-theme.json` (theme name **"Acadia 2026"**).
 - **Charts:** copy the matplotlib / plotly / D3 snippets in [`skill/references/charts.md`](skill/references/charts.md).
 - **Word/PDF:** follow [`skill/references/documents.md`](skill/references/documents.md).
 
